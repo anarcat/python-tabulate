@@ -6,6 +6,7 @@ import tabulate
 import asciitable
 import prettytable
 import texttable
+import terminaltables
 import sys
 import codecs
 
@@ -19,6 +20,7 @@ import tabulate
 import asciitable
 import prettytable
 import texttable
+import terminaltables
 
 
 import platform
@@ -71,6 +73,8 @@ def run_tabulate(table, widechars=False):
     return tabulate.tabulate(table)
 
 
+def run_terminaltables(table):
+    return terminaltables.DoubleTable(table).table
 """
 
 methods = [(u"join with tabs and newlines", "join_table(table)"),
@@ -80,6 +84,7 @@ methods = [(u"join with tabs and newlines", "join_table(table)"),
            (u"tabulate (%s, WIDE_CHARS_MODE)" % tabulate.__version__, "run_tabulate(table, widechars=True)"),
            (u"PrettyTable (%s)" % prettytable.__version__, "run_prettytable(table)"),
            (u"texttable (%s)" % texttable.__version__, "run_texttable(table)"),
+           (u"terminaltables (%s)" % terminaltables.__version__, "run_terminaltables(table)"),
            ]
 
 
